@@ -119,7 +119,7 @@ class CalendarDatePicker2WithActionButtonsState extends State<CalendarDatePicker
             child: Text(
               localizations.cancelButtonLabel.toUpperCase(),
               style: TextStyle(
-                color: widget.config.cancleButtonTextColor ?? const Color.fromRGBO(183, 84, 0, 1),
+                color: widget.config.cancleButtonTextColor ??  CommonColor.commonColor,
                 fontWeight: FontWeight.w700,
                 fontSize: 18,
               ),
@@ -143,7 +143,7 @@ class CalendarDatePicker2WithActionButtonsState extends State<CalendarDatePicker
             height: widget.config.applyButtonSize?.height ?? 50,
             decoration: BoxDecoration(
               color:
-                  widget.config.themeColor ?? widget.config.applyButtonBgColor ?? const Color.fromRGBO(183, 84, 0, 1),
+                  widget.config.themeColor ?? widget.config.applyButtonBgColor ??  CommonColor.commonColor,
               borderRadius: BorderRadius.circular(10),
             ),
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),

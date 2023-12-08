@@ -166,3 +166,10 @@ class CalendarDatePicker2Config {
   Widget? cancleButtonWidget;
   Widget? singleButtonWidget;
 }
+
+
+
+class CommonColor {
+          
+  static Color commonColor = const Color(0xff006C5C);
+}
