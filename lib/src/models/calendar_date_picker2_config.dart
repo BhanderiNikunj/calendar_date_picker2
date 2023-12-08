@@ -54,6 +54,7 @@ class CalendarDatePicker2Config {
     this.cancleButtonTextColor,
     this.applyButtonTextColor,
     this.currentDateBorderColor,
+    this.currentYearBgColor,
 
     //  styles
 
@@ -123,6 +124,7 @@ class CalendarDatePicker2Config {
   Color? cancleButtonTextColor;
   Color? applyButtonTextColor;
   Color? currentDateBorderColor;
+  Color? currentYearBgColor;
 
   // style
 
