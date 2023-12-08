@@ -269,15 +269,16 @@ class _CalendarViewState extends State<_CalendarView> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
+      children: [
         SizedBox(
           height: (widget.config.controlsHeight ?? _subHeaderHeight),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               IconButton(
+                splashColor: Colors.transparent,
                 icon: Icon(
-                  Icons.chevron_left,
+                  Icons.arrow_back_ios_rounded,
                   size: 35,
                   color: widget.config.themeColor ??
                       widget.config.arrowColor ??
@@ -290,8 +291,9 @@ class _CalendarViewState extends State<_CalendarView> {
                     _isDisplayingFirstMonth ? null : _handlePreviousMonth,
               ),
               IconButton(
+                splashColor: Colors.transparent,
                 icon: Icon(
-                  Icons.chevron_right,
+                  Icons.arrow_forward_ios_rounded,
                   size: 35,
                   color: widget.config.themeColor ??
                       widget.config.arrowColor ??
@@ -305,9 +307,7 @@ class _CalendarViewState extends State<_CalendarView> {
             ],
           ),
         ),
-        SizedBox(
-          height: widget.config.spaceBetweenYearAndCalender ?? 10,
-        ),
+        SizedBox(height: widget.config.spaceBetweenYearAndCalender ?? 10),
         Expanded(
           child: FocusableActionDetector(
             shortcuts: _shortcutMap,

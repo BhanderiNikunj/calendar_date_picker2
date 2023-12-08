@@ -69,8 +69,6 @@ class _YearPickerState extends State<YearPicker> {
   }
 
   Widget _buildYearItem(BuildContext context, int index) {
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
-
     final int offset = _itemCount < minYears ? (minYears - _itemCount) ~/ 2 : 0;
     final int year = widget.config.firstDate!.year + index - offset;
     final bool isSelected = widget.selectedDates.any((d) => d?.year == year);
@@ -89,7 +87,7 @@ class _YearPickerState extends State<YearPicker> {
     } else if (isCurrentYear && !isDisabled) {
       decoration = BoxDecoration(
         border: Border.all(
-          color: colorScheme.primary,
+          color: Colors.red,
         ),
         borderRadius: BorderRadius.circular(decorationHeight / 2),
       );

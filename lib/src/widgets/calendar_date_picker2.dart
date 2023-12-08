@@ -286,7 +286,6 @@ class _CalendarDatePicker2State extends State<CalendarDatePicker2> {
     return Stack(
       children: <Widget>[
         SizedBox(
-          // height: (widget.config.controlsHeight ?? _subHeaderHeight) + _maxDayPickerHeight,
           height: widget.config.calenderHeight ?? 300,
           child: _buildPicker(),
         ),

@@ -20,10 +20,12 @@ class CalendarDatePicker2WithActionButtons extends StatefulWidget {
   final Function? onOkTapped;
 
   @override
-  State<CalendarDatePicker2WithActionButtons> createState() => CalendarDatePicker2WithActionButtonsState();
+  State<CalendarDatePicker2WithActionButtons> createState() =>
+      CalendarDatePicker2WithActionButtonsState();
 }
 
-class CalendarDatePicker2WithActionButtonsState extends State<CalendarDatePicker2WithActionButtons> {
+class CalendarDatePicker2WithActionButtonsState
+    extends State<CalendarDatePicker2WithActionButtons> {
   List<DateTime?> values = [];
   List<DateTime?> editCache = [];
 
@@ -35,7 +37,8 @@ class CalendarDatePicker2WithActionButtonsState extends State<CalendarDatePicker
   }
 
   @override
-  void didUpdateWidget(covariant CalendarDatePicker2WithActionButtons oldWidget) {
+  void didUpdateWidget(
+      covariant CalendarDatePicker2WithActionButtons oldWidget) {
     var isValueSame = oldWidget.value.length == widget.value.length;
 
     if (isValueSame) {
@@ -113,13 +116,14 @@ class CalendarDatePicker2WithActionButtonsState extends State<CalendarDatePicker
             decoration: BoxDecoration(
                 color: widget.config.themeColor?.withOpacity(0.5) ??
                     widget.config.cancleButtonBgColor?.withOpacity(0.5) ??
-                    const Color.fromRGBO(255, 231, 210, 1),
+                     CommonColor.commonColor.withOpacity(0.5),
                 borderRadius: BorderRadius.circular(10)),
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
             child: Text(
               localizations.cancelButtonLabel.toUpperCase(),
               style: TextStyle(
-                color: widget.config.cancleButtonTextColor ??  CommonColor.commonColor,
+                color: widget.config.cancleButtonTextColor ??
+                    CommonColor.commonColor,
                 fontWeight: FontWeight.w700,
                 fontSize: 18,
               ),
@@ -131,19 +135,21 @@ class CalendarDatePicker2WithActionButtonsState extends State<CalendarDatePicker
   Widget buildOkButton() {
     return InkWell(
       borderRadius: BorderRadius.circular(5),
-      onTap: () => setState(() {
-        values = editCache;
-        widget.onValueChanged?.call(values);
-        widget.onOkTapped?.call();
-        Navigator.pop(context, values);
-      }),
+      onTap: () => setState(
+        () {
+          values = editCache;
+          widget.onValueChanged?.call(values);
+          widget.onOkTapped?.call();
+          Navigator.pop(context, values);
+        },
+      ),
       child: widget.config.applyButtonWidget ??
           Container(
             alignment: Alignment.center,
-            height: widget.config.applyButtonSize?.height ?? 50,
             decoration: BoxDecoration(
-              color:
-                  widget.config.themeColor ?? widget.config.applyButtonBgColor ??  CommonColor.commonColor,
+              color: widget.config.themeColor ??
+                  widget.config.applyButtonBgColor ??
+                  CommonColor.commonColor,
               borderRadius: BorderRadius.circular(10),
             ),
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),

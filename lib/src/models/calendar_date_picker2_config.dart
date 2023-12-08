@@ -98,7 +98,8 @@ class CalendarDatePicker2Config {
     this.cancleButtonWidget,
     this.singleButtonWidget,
   })  : firstDate = DateUtils.dateOnly(firstDate ?? DateTime(1970)),
-        lastDate = DateUtils.dateOnly(lastDate ?? DateTime(DateTime.now().year + 100)),
+        lastDate =
+            DateUtils.dateOnly(lastDate ?? DateTime(DateTime.now().year + 100)),
         currentDate = currentDate ?? DateUtils.dateOnly(DateTime.now()),
         calendarViewMode = calendarViewMode ?? DatePickerMode.day;
 
@@ -167,9 +168,6 @@ class CalendarDatePicker2Config {
   Widget? singleButtonWidget;
 }
 
-
-
 class CommonColor {
-          
   static Color commonColor = const Color(0xff006C5C);
 }
